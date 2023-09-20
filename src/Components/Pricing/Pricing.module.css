@@ -64,20 +64,21 @@
 
 .tableHeader {
   display: flex;
-  margin-top: 100px;
+  margin-top: 5em;
   margin-bottom: 20px;
 }
 
 .tableData {
   display: flex;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to bottom,
     #c7d9f1,
     #caddf5,
     #d0e1f5,
     #e0eaf5,
     #f0f3f6
-  );
+  ); */
+  background-color: #c7d9f1;
   padding: 20px;
   border-radius: 10px;
 }
@@ -106,7 +107,7 @@
   padding: 10px 0;
 }
 .featuresText > p:nth-child(2) > span {
-  color: var(--blue3);
+  color: var(--blue);
   font-weight: 700;
 }
 .info {
@@ -176,7 +177,7 @@
   padding: 10px 15px;
   cursor: pointer;
   margin-top: 10px;
-  font-size: 16.5px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--primary);
 }
@@ -224,6 +225,7 @@ strike {
   height: 14px;
 }
 .infoData {
+  font-weight: 500;
   border-bottom: 1px solid var(--white);
   margin-right: 70px;
   padding: 10px 0;
@@ -239,4 +241,5 @@ strike {
 
 .lastinfo {
   padding-top: 10px;
+  font-weight: 500;
 }
