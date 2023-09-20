@@ -64,7 +64,7 @@
 
 .tableHeader {
   display: flex;
-  margin-top: 70px;
+  margin-top: 100px;
   margin-bottom: 20px;
 }
 
@@ -99,7 +99,7 @@
   padding: 20px 0;
 }
 .featuresText > p:nth-child(1) {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: 500;
 }
 .featuresText > p:nth-child(2) {
@@ -107,7 +107,7 @@
 }
 .featuresText > p:nth-child(2) > span {
   color: var(--blue3);
-  font-weight: 600;
+  font-weight: 700;
 }
 .info {
   width: 22%;
@@ -115,7 +115,7 @@
   background-color: white;
 }
 .text {
-  padding-top: 75px;
+  padding-top: 47px;
   padding-bottom: 30px;
 }
 .tableData > div:nth-child(3) {
@@ -135,7 +135,7 @@
   text-align: center;
   position: absolute;
   content: "";
-  top: -16.3em;
+  top: -16.7em;
   left: 0;
   border: 3px #41add9 solid;
   box-shadow: 5px 6px 8px #eaebf0;
@@ -144,27 +144,30 @@
   padding-top: 20px;
 }
 .info > p:nth-child(1) {
-  font-weight: 600;
+  font-size: 1.3em;
+  font-weight: 500;
 }
 .info > p:nth-child(2) {
-  font-size: 38px;
-  font-weight: 600;
+  font-size: 35px;
+  font-weight: 500;
   color: var(--blue3);
   padding: 10px 0;
 }
 .info > p:nth-child(3) {
-  color: var(--blue);
-  font-size: 14px;
+  color: var(--blue3);
+  font-size: 15px;
   font-weight: 600;
+  padding: 10px 0;
 }
 .info > p:nth-child(3) > span {
   font-size: 18px;
+  color: var(--blue3);
+  font-weight: 700;
 }
 .info > a {
   color: var(--blue);
   font-size: 14px;
   font-weight: 500;
-  margin: 40px 0;
 }
 .info > button {
   background: linear-gradient(20deg, var(--blue14) 0, var(--white) 100%);
@@ -173,6 +176,7 @@
   padding: 10px 15px;
   cursor: pointer;
   margin-top: 10px;
+  font-size: 16.5px;
   font-weight: 600;
   color: var(--primary);
 }
@@ -182,21 +186,27 @@ strike {
   font-weight: 300;
   font-size: 35px;
 }
+
 .recommendedText > p:nth-child(1) {
-  font-size: 18px;
+  font-size: 1.3em;
   font-weight: 600;
   color: var(--blue3);
 }
 .recommendedText > p:nth-child(2) {
-  font-size: 38px;
-  font-weight: 600;
+  font-size: 35px;
+  font-weight: 500;
   color: var(--blue3);
   padding: 10px 0;
 }
 .recommendedText > p:nth-child(3) {
-  color: var(--blue);
-  font-size: 14px;
+  color: var(--blue3);
+  font-size: 15px;
   font-weight: 600;
+  padding: 10px 0;
+}
+.recommendedText > p:nth-child(3) > span {
+  color: var(--blue);
+  font-weight: 700;
 }
 .recommendedText > button {
   background: linear-gradient(20deg, var(--primary) 0, var(--secondary) 100%);
@@ -205,7 +215,9 @@ strike {
   border-radius: 5px;
   padding: 10px 15px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 18px;
+  font-size: 16.5px;
+  font-weight: 600;
 }
 .infoIcon > p > img {
   width: 14px;
@@ -222,5 +234,9 @@ strike {
   padding: 10px 0;
 }
 .premiumBtn {
-  margin-top: 68px !important;
+  margin-top: 85px !important;
+}
+
+.lastinfo {
+  padding-top: 10px;
 }

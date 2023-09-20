@@ -3,16 +3,30 @@ import subcribe from "../../assests/Subscriptions/Subcribe.png";
 import tick from "../../assests/Subscriptions/Tick.png";
 import cross from "../../assests/Subscriptions/Cross.png";
 import percent from "../../assests/Subscriptions/Percent.png";
+import { useState } from "react";
 
 export default function Pricing() {
+  const [duration, setDuration] = useState("month");
+  console.log(duration);
+
   return (
     <div className={classes.container}>
       <div className={classes.plans}>
         <p>Subscriptions Plans</p>
         <p>Choose the best plan for you</p>
         <div className={classes.packageBtn}>
-          <p className={classes.month}>Monthly</p>
-          <p className={classes.year}>Yearly</p>
+          <p
+            className={duration === "month" ? classes.month : classes.year}
+            onClick={() => setDuration("month")}
+          >
+            Monthly
+          </p>
+          <p
+            className={duration === "year" ? classes.month : classes.year}
+            onClick={() => setDuration("year")}
+          >
+            Yearly
+          </p>
         </div>
         <div className={classes.percent}>
           <img src={percent} alt="" />
@@ -24,6 +38,7 @@ export default function Pricing() {
       <div className={classes.table}>
         {/* --------------------table heading------------------------- */}
         <div className={classes.tableHeader}>
+          {/* .....Features...... */}
           <div className={classes.features}>
             <div className={classes.featuresText}>
               <p>Features</p>
@@ -33,6 +48,7 @@ export default function Pricing() {
               <img src={subcribe} alt="" />
             </div>
           </div>
+          {/* ....Free..... */}
           <div className={classes.info}>
             <p>Free</p>
             <p>
@@ -41,19 +57,24 @@ export default function Pricing() {
             <p>Free Forever</p>
             <button>Subscribe Now</button>
           </div>
+          {/* ....Standard Prepaid..... */}
           <div className={classes.info}>
             <p></p>
           </div>
-          <div className={classes.info}>
-            <p>Standard Postpaid</p>
-            <p>
-              <sup>৳</sup> <strike>499</strike> 299
-            </p>
-            <p>
-              <span>৳2</span> /Prescription per Patient
-            </p>
-            <button>Subscribe Now</button>
-          </div>
+          {/* .....Standard Postpaid..... */}
+          {duration === "month" && (
+            <div className={classes.info}>
+              <p>Standard Postpaid</p>
+              <p>
+                <sup>৳</sup> <strike>499</strike> 299
+              </p>
+              <p>
+                <span>৳2</span> /Prescription per Patient
+              </p>
+              <button>Subscribe Now</button>
+            </div>
+          )}
+          {/* .....Premium...... */}
           <div className={classes.info}>
             <p>Premium</p>
             <br />
@@ -63,6 +84,7 @@ export default function Pricing() {
         </div>
         {/* ---------------table data-----------s------ */}
         <div className={classes.tableData}>
+          {/* .....Features...... */}
           <div className={classes.featuresData}>
             <div className={classes.infoData}>
               <p>Number of Patients</p>
@@ -98,17 +120,26 @@ export default function Pricing() {
             <div className={classes.infoData}>
               <p>Clinic Promotion through Ads</p>
             </div>
-            <div>
+            <div className={classes.lastinfo}>
               <p>Custom Solution as per Requirements</p>
             </div>
           </div>
+          {/* ....Free..... */}
           <div className={classes.info}>
             <div className={classes.infoIcon}>
               <p>N/A</p>
             </div>
-            <div className={classes.infoIcon}>
-              <p>N/A</p>
-            </div>
+            {duration === "month" ? (
+              <div className={classes.infoIcon}>
+                <p>N/A</p>
+              </div>
+            ) : (
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={tick} alt="" />
+                </p>
+              </div>
+            )}
             <div className={classes.infoIcon}>
               <p>
                 <img src={tick} alt="" />
@@ -160,25 +191,46 @@ export default function Pricing() {
               </p>
             </div>
           </div>
-
+          {/* ....Standard Prepaid..... */}
           <div className={classes.info}>
             <div className={classes.recommended}>
               <div className={classes.recommendedText}>
-                <p>Standard Prepaid</p>
+                {duration === "month" ? (
+                  <p>Standard Prepaid</p>
+                ) : (
+                  <p>Standard</p>
+                )}
+                {duration === "month" ? (
+                  <p>
+                    <sup>৳ </sup>
+                    <strike>2999</strike> 2499
+                  </p>
+                ) : (
+                  <p>
+                    <sup>৳ </sup>
+                    <strike>35999</strike> 19999
+                  </p>
+                )}
                 <p>
-                  <sup>৳ </sup>
-                  <strike>2999</strike> 2499
+                  Free Trail for <span>1 Month</span>
                 </p>
-                <p>Free Trail for 1 Month</p>
                 <button>Subscribe Now</button>
               </div>
               <div className={classes.text}>
                 <div className={classes.infoIcon}>
                   <p>Unlimited</p>
                 </div>
-                <div className={classes.infoIcon}>
-                  <p>Unlimited</p>
-                </div>
+                {duration === "month" ? (
+                  <div className={classes.infoIcon}>
+                    <p>Unlimited</p>
+                  </div>
+                ) : (
+                  <div className={classes.infoIcon}>
+                    <p>
+                      <img src={tick} alt="" />
+                    </p>
+                  </div>
+                )}
                 <div className={classes.infoIcon}>
                   <p>
                     <img src={tick} alt="" />
@@ -224,7 +276,7 @@ export default function Pricing() {
                     <img src={cross} alt="" />
                   </p>
                 </div>
-                <div className={classes.infoIcon}>
+                <div className={classes.lastinfo}>
                   <p>
                     <img src={cross} alt="" />
                   </p>
@@ -232,71 +284,83 @@ export default function Pricing() {
               </div>
             </div>
           </div>
-          <div className={classes.info}>
-            <div className={classes.infoIcon}>
-              <p>&lt;1000</p>
+          {/* .....Standard Postpaid..... */}
+          {duration === "month" && (
+            <div className={classes.info}>
+              <div className={classes.infoIcon}>
+                <p>&lt;1000</p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>&lt;1000</p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={tick} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={tick} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={tick} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={tick} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={tick} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={tick} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={tick} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={cross} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={cross} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={cross} alt="" />
+                </p>
+              </div>
             </div>
-            <div className={classes.infoIcon}>
-              <p>&lt;1000</p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={tick} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={tick} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={tick} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={tick} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={tick} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={tick} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={tick} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={cross} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={cross} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={cross} alt="" />
-              </p>
-            </div>
-          </div>
+          )}
+          {/* .....Premium...... */}
           <div className={classes.info}>
             <div className={classes.infoIcon}>
               <p>Unlimited</p>
             </div>
-            <div className={classes.infoIcon}>
-              <p>Unlimited</p>
-            </div>
+            {duration === "month" ? (
+              <div className={classes.infoIcon}>
+                <p>Unlimited</p>
+              </div>
+            ) : (
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={tick} alt="" />
+                </p>
+              </div>
+            )}
             <div className={classes.infoIcon}>
               <p>
                 <img src={tick} alt="" />
