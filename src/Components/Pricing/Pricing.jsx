@@ -3,16 +3,23 @@ import subcribe from "../../assests/Subscriptions/Subcribe.png";
 import tick from "../../assests/Subscriptions/Tick.png";
 import cross from "../../assests/Subscriptions/Cross.png";
 import percent from "../../assests/Subscriptions/Percent.png";
+import { useState } from "react";
 
 export default function Pricing() {
+  const [duration, setDuration] = useState("month");
+
   return (
     <div className={classes.container}>
       <div className={classes.plans}>
         <p>Subscriptions Plans</p>
         <p>Choose the best plan for you</p>
         <div className={classes.packageBtn}>
-          <p className={classes.month}>Monthly</p>
-          <p className={classes.year}>Yearly</p>
+          <p className={classes.month} onClick={() => setDuration("month")}>
+            Monthly
+          </p>
+          <p className={classes.year} onClick={() => setDuration("year")}>
+            Yearly
+          </p>
         </div>
         <div className={classes.percent}>
           <img src={percent} alt="" />
@@ -44,16 +51,18 @@ export default function Pricing() {
           <div className={classes.info}>
             <p></p>
           </div>
-          <div className={classes.info}>
-            <p>Standard Postpaid</p>
-            <p>
-              <sup>৳</sup> <strike>499</strike> 299
-            </p>
-            <p>
-              <span>৳2</span> /Prescription per Patient
-            </p>
-            <button>Subscribe Now</button>
-          </div>
+          {duration === "month" && (
+            <div className={classes.info}>
+              <p>Standard Postpaid</p>
+              <p>
+                <sup>৳</sup> <strike>499</strike> 299
+              </p>
+              <p>
+                <span>৳2</span> /Prescription per Patient
+              </p>
+              <button>Subscribe Now</button>
+            </div>
+          )}
           <div className={classes.info}>
             <p>Premium</p>
             <br />
@@ -167,7 +176,7 @@ export default function Pricing() {
                 <p>Standard Prepaid</p>
                 <p>
                   <sup>৳ </sup>
-                  <strike>2999</strike> 2499
+                  <strike>{duration === "month" ? "2999" : "3500"}</strike> 2499
                 </p>
                 <p>Free Trail for 1 Month</p>
                 <button>Subscribe Now</button>
@@ -232,64 +241,66 @@ export default function Pricing() {
               </div>
             </div>
           </div>
-          <div className={classes.info}>
-            <div className={classes.infoIcon}>
-              <p>&lt;1000</p>
+          {duration === "month" && (
+            <div className={classes.info}>
+              <div className={classes.infoIcon}>
+                <p>&lt;1000</p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>&lt;1000</p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={tick} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={tick} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={tick} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={tick} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={tick} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={tick} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={tick} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={cross} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={cross} alt="" />
+                </p>
+              </div>
+              <div className={classes.infoIcon}>
+                <p>
+                  <img src={cross} alt="" />
+                </p>
+              </div>
             </div>
-            <div className={classes.infoIcon}>
-              <p>&lt;1000</p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={tick} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={tick} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={tick} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={tick} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={tick} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={tick} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={tick} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={cross} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={cross} alt="" />
-              </p>
-            </div>
-            <div className={classes.infoIcon}>
-              <p>
-                <img src={cross} alt="" />
-              </p>
-            </div>
-          </div>
+          )}
           <div className={classes.info}>
             <div className={classes.infoIcon}>
               <p>Unlimited</p>
