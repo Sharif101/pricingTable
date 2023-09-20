@@ -23,12 +23,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 7px;
   margin-top: 10px;
+}
+.percent > p {
+  color: var(--blue3);
+  font-size: 15px;
+  font-weight: 600;
+}
+.percent > p > span {
+  color: var(--blue);
+  font-weight: 700;
 }
 .packageBtn {
   width: 226px;
-  background-color: var(--light-low);
+  background-color: var(--light-secondary3);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -42,13 +51,15 @@
   color: var(--white);
   padding: 8px 20px;
   border-radius: 20px;
+  cursor: pointer;
 }
 .year {
-  background-color: var(--light-deep);
+  background-color: var(--blue13);
   font-weight: 600;
   color: var(--black);
   padding: 8px 20px;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .tableHeader {
@@ -81,6 +92,22 @@
   text-align: center;
   background-color: #457ec317;
   border-radius: 10px;
+  background: url(../../assests/Subscriptions/Features.png) no-repeat center;
+  background-size: cover;
+}
+.featuresText {
+  padding: 20px 0;
+}
+.featuresText > p:nth-child(1) {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.featuresText > p:nth-child(2) {
+  padding: 10px 0;
+}
+.featuresText > p:nth-child(2) > span {
+  color: var(--blue3);
+  font-weight: 600;
 }
 .info {
   width: 22%;
@@ -88,7 +115,7 @@
   background-color: white;
 }
 .text {
-  padding-top: 45px;
+  padding-top: 75px;
   padding-bottom: 30px;
 }
 .tableData > div:nth-child(3) {
@@ -108,7 +135,7 @@
   text-align: center;
   position: absolute;
   content: "";
-  top: -14.4em;
+  top: -16.3em;
   left: 0;
   border: 3px #41add9 solid;
   box-shadow: 5px 6px 8px #eaebf0;
@@ -126,24 +153,39 @@
   padding: 10px 0;
 }
 .info > p:nth-child(3) {
-  color: var(--grey);
+  color: var(--blue);
   font-size: 14px;
+  font-weight: 600;
+}
+.info > p:nth-child(3) > span {
+  font-size: 18px;
+}
+.info > a {
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 500;
+  margin: 40px 0;
 }
 .info > button {
-  background: none;
-  border: 1.5px solid var(--blue3);
+  background: linear-gradient(20deg, var(--blue14) 0, var(--white) 100%);
+  border: 2px solid var(--secondary);
   border-radius: 5px;
   padding: 10px 15px;
   cursor: pointer;
   margin-top: 10px;
+  font-weight: 600;
+  color: var(--primary);
 }
+
 strike {
   color: var(--grey);
   font-weight: 300;
   font-size: 35px;
 }
 .recommendedText > p:nth-child(1) {
+  font-size: 18px;
   font-weight: 600;
+  color: var(--blue3);
 }
 .recommendedText > p:nth-child(2) {
   font-size: 38px;
@@ -152,8 +194,9 @@ strike {
   padding: 10px 0;
 }
 .recommendedText > p:nth-child(3) {
-  color: var(--grey);
+  color: var(--blue);
   font-size: 14px;
+  font-weight: 600;
 }
 .recommendedText > button {
   background: linear-gradient(20deg, var(--primary) 0, var(--secondary) 100%);
@@ -177,4 +220,7 @@ strike {
   border-bottom: 1px solid var(--light-deep);
   margin: 0 70px;
   padding: 10px 0;
+}
+.premiumBtn {
+  margin-top: 68px !important;
 }

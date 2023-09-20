@@ -16,16 +16,20 @@ export default function Pricing() {
         </div>
         <div className={classes.percent}>
           <img src={percent} alt="" />
-          <p>Save 45% with Yearly Payment</p>
+          <p>
+            <span>Save 45%</span> with Yearly Payment
+          </p>
         </div>
       </div>
       <div className={classes.table}>
         {/* --------------------table heading------------------------- */}
         <div className={classes.tableHeader}>
           <div className={classes.features}>
-            <div>
+            <div className={classes.featuresText}>
               <p>Features</p>
-              <p>Get started with Smart ClinicX</p>
+              <p>
+                Get started with <span>Smart ClinicX</span>
+              </p>
               <img src={subcribe} alt="" />
             </div>
           </div>
@@ -45,14 +49,16 @@ export default function Pricing() {
             <p>
               <sup>৳</sup> <strike>499</strike> 299
             </p>
-            <p>৳2 /Prescription per Patient</p>
+            <p>
+              <span>৳2</span> /Prescription per Patient
+            </p>
             <button>Subscribe Now</button>
           </div>
           <div className={classes.info}>
             <p>Premium</p>
             <br />
             <a href="">Contact us</a> <br />
-            <button>Subscribe Now</button>
+            <button className={classes.premiumBtn}>Subscribe Now</button>
           </div>
         </div>
         {/* ---------------table data-----------s------ */}
@@ -228,10 +234,10 @@ export default function Pricing() {
           </div>
           <div className={classes.info}>
             <div className={classes.infoIcon}>
-              <p>1000</p>
+              <p>&lt;1000</p>
             </div>
             <div className={classes.infoIcon}>
-              <p>1000</p>
+              <p>&lt;1000</p>
             </div>
             <div className={classes.infoIcon}>
               <p>
